@@ -37,7 +37,7 @@ class ProductController extends Controller
         else
         {
             $brands = Brand::pluck('name', 'id');
-        return view('products.create')-> with('brands', $brands);;
+        return view('products.create')-> with('brands', $brands);
         }
     }
 

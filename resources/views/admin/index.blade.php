@@ -22,33 +22,53 @@
 </div>
 
 <div class="container">
-    <div>
-        <ul>
-            <li class="list"><a href="/products/create">Register a Product</a></li>
-            <li class="list"><a href="/brands/create">Register a Brand</a></li>
-        </ul>
-    </div>
-    
-</div>
-<div class="container">
-    All Products.
+    <div class="row justify-content-center" style="padding-top: 10rem;" >
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                    <div class="col-sm"><a href="/products/create" class="btn btn-info">Register a Product</a></div>
+                    <div class="col-sm"></div>
+                    <div class="col-sm"><a href="/brands/create" class="btn btn-info">Register a Brand</a></div>
+                    </div>
+                </div>
 
-@include('inc.messages') 
-<br>
-@if(count($products) > 0)
-    @foreach ($products as $item)
-        <div>
-        <h3>{{$item->name}}</h3>
-        <h4>{{$item->description}}</h4>
-        <small>Registered on {{$item->created_at}}</small>
-        <a href="/admin/{{$item->id}}/edit"><button>Edit</button></a> 
-        {!! Form::open(['action' => ['AdminController@destroy', $item->id],'method'=> 'POST']) !!}
-            {{Form::hidden('_method', 'DELETE')}}
-            {{Form::submit('Delete')}}
-        {!! Form::close() !!}
-    @endforeach
-    @else
-     No Products Found.
-    @endif
+                <div class="card-body">
+                	<div class="container">
+                        <h2>All Products.</h2>
+                    
+                    @include('inc.messages') 
+                    <br>
+                    @if(count($products) > 0)
+                        @foreach ($products as $item)
+                            <div>
+                            <h3>{{$item->name}}</h3>
+                            <h4>{{$item->description}}</h4>
+                            <small>Registered on {{$item->created_at}}</small>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm">
+                                    <a href="/admin/{{$item->id}}/edit"><button class="btn btn-primary">Edit</button></a>
+                                </div>
+                                <div class="col-sm">
+                                    {!! Form::open(['action' => ['AdminController@destroy', $item->id],'method'=> 'POST', 'class'=>'pull-right']) !!}
+                                {{Form::hidden('_method', 'DELETE')}}
+                                {{Form::submit('Delete',['class' => 'btn btn-danger'])}}
+                            {!! Form::close() !!}
+                                </div>
+                            </div>
+                             
+                            
+                            <hr>
+                        @endforeach
+                        @else
+                         No Products Found.
+                        @endif
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection

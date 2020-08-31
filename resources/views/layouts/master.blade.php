@@ -18,7 +18,7 @@
        <title>AAM Construction</title>
         
         <!-- favicon -->
-        <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+        <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
         <link rel="shortcut icon" type="image/x-icon" href="images/fav.png">
 
 

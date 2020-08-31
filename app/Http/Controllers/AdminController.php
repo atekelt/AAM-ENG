@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Product;
+use App\Brand;
 
 class AdminController extends Controller
 {
@@ -74,7 +75,8 @@ class AdminController extends Controller
         else
         {
             $product = Product::find($id);
-            return view('admin.edit')-> with('product', $product);
+            $brands = Brand::pluck('name', 'id');
+            return view('admin.edit')-> with('product', $product)->with('brands', $brands);
             
         }
     }
@@ -98,7 +100,6 @@ class AdminController extends Controller
             'name' => 'required',
             'price' => 'required'
         ]);
-
         $product = Product::find($id);
         $product->name = $request->input('name');
         $product->product_number = $request->input('product_number');
