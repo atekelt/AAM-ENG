@@ -29,6 +29,8 @@ Route::get('/about', function ()
 })->name('about');
 
 Route::get('/brands', 'BrandController@index')->name('brands.all');
+Route::get('/brands/create', 'BrandController@create');
+Route::post('/brands/store', 'BrandController@store');
 
 Route::get('/brands/{brand}-{slug}', 'BrandController@show')->name('brand.show');
 
@@ -42,9 +44,10 @@ Route::post('/contact', function(){
 })->name('contact-submit');
 
 
-Route::get('/products/', 'ProductController@index')->name('products.all');
+Route::get('/products', 'ProductController@index')->name('products.all');
 Route::get('/product/{product}-{slug}', 'ProductController@show');
-
+Route::get('/products/create', 'ProductController@create');
+Route::post('/products/store', 'ProductController@store');
 
 Route::get('/cart', 'CartController@index');
 
@@ -56,3 +59,12 @@ Route::post('/checkout', 'OrderController@create');
 Route::get('/login', 'SessionController@index')->name('login');
 Route::post('/login', 'SessionController@store')->name('login-action');
 Route::post('/logout', 'SessionController@destroy')->name('logout');
+
+Route::get('/admin', 'AdminController@index');
+Route::get('/admin/{id}/edit', 'AdminController@edit');
+Route::put('/admin/update/{id}', 'AdminController@update');
+Route::delete('/admin/{id}', 'AdminController@destroy');
+
+Auth::routes();
+
+Route::get('/home', 'AdminController@index');

@@ -15,7 +15,7 @@
 							<div class="col-lg-4 col-md-6">
 			                <div class="cource-item">
 			                    <div class="cource-img">
-			                        <a href="{{ $product->path()}}"><img src="{{ $product->image }}" alt="" /></a>
+			                        <a href="{{ $product->path()}}"><img src="storage\images\{{$product->image}}" alt="" /></a>
 	                                <a class="image-link" href="{{ $product->path()}}" title="{{ $product->brand->name}}">
 	                                    <i class="fa fa-link"></i>
 	                                </a>

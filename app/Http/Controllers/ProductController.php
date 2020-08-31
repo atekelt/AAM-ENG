@@ -6,6 +6,7 @@ use App\Product;
 use Illuminate\Http\Request;
 
 use App\Cart;
+use App\Brand;
 use Session;
 
 class ProductController extends Controller
@@ -29,7 +30,15 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        if(\auth::guest())
+        {
+            return redirect('/login');
+        }
+        else
+        {
+            $brands = Brand::pluck('name', 'id');
+        return view('products.create')-> with('brands', $brands);;
+        }
     }
 
     /**
@@ -40,7 +49,47 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if(\auth::guest())
+        {
+            return redirect('/login');
+        }
+        else
+        {
+        $this->validate($request, [
+            'name' => 'required',
+            'price' => 'required',
+            'cover_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+
+
+        if($request->hasFile('cover_image')){
+            $fileNameWithExt = $request->file('cover_image')->getClientOriginalName();
+            $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
+
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            $path = $request->file('cover_image')->storeAs('images', $fileNameToStore);
+        }
+
+        else{
+            $fileNameToStore = 'noimage.jpg';
+        }
+
+
+        $product = new Product;
+        $product->name = $request->input('name');
+        $product->product_number = $request->input('product_number');
+        $product->count = $request->input('count');
+        $product->description = $request->input('description');
+        $product->price = $request->input('price');
+        $product->brand_id = $request->input('brand_id');
+
+        
+        $product->image = $fileNameToStore;
+        $product->save();
+
+        return redirect('/products/create')->with('success', 'Product Item Added');   
+        }
     }
 
     /**
