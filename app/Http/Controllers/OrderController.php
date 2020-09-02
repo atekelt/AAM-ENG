@@ -20,7 +20,8 @@ class OrderController extends Controller
         }
         else
         {
-            
+            $orders = Order::orderBy('created_at','desc')->get();
+        return view ('admin.order')-> with('orders', $orders);
         }
     }
 
@@ -85,8 +86,10 @@ class OrderController extends Controller
      * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Order $order)
+    public function destroy(Request $request)
     {
-        //
+        $order = Order::find($request->id);
+        $order->delete();
+        return redirect('/order')->with('success', 'Order Confirmed');
     }
 }

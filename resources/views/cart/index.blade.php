@@ -7,7 +7,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                	Cart
+                    Cart
                 </div>
                 <div class="card-body">
                 	
@@ -15,12 +15,11 @@
                     <thead class="thead-light">
                       <tr>
                         <th scope="col">Product Name</th>
-                        {{-- <th scope="col">Quantity</th> --}}
                         <th scope="col"></th>
                       </tr>
                     </thead>
                     <tbody>
-                        @if(count($item) > 0)
+                        @if($item != NULL)
                         @foreach($item as $key => $value)
                        <tr>
                            

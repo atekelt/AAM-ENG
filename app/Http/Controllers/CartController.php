@@ -40,7 +40,9 @@ class CartController extends Controller
         $order->phoneNumber = $request->phoneNumber;
         $order->items = session('cart');
         $order->save();
-        return session('cart');
+        session::flush();
+        $item = session('cart');
+        return redirect('/cart')->with('item',$item)->with('success','Order Placed');
     }
 
     /**

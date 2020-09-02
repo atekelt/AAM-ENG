@@ -55,6 +55,7 @@ Route::post('/cart/destroy','CartController@destroy');
 Route::post('/cart/create', 'CartController@create');
 
 Route::get('/order', 'OrderController@index');
+Route::post('/order/destroy', 'OrderController@destroy');
 
 Route::post('/checkout', 'OrderController@create');
 
