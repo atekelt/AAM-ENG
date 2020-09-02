@@ -50,9 +50,11 @@ Route::get('/products/create', 'ProductController@create');
 Route::post('/products/store', 'ProductController@store');
 
 Route::get('/cart', 'CartController@index');
+Route::post('/cart/store', 'CartController@store');
+Route::post('/cart/destroy','CartController@destroy');
+Route::post('/cart/create', 'CartController@create');
 
-Route::post('/order/{product}/{number}', 'CartController@addProductToCart')->where('id', '[0-9]+')->name('order.add');
-Route::post('/order/remove/{product}', 'CartController@removeProductFromCart')->name('order.remove');
+Route::get('/order', 'OrderController@index');
 
 Route::post('/checkout', 'OrderController@create');
 

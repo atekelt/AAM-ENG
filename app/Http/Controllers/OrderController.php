@@ -14,7 +14,14 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        if(\auth::guest())
+        {
+            return redirect('/login');
+        }
+        else
+        {
+            
+        }
     }
 
     /**

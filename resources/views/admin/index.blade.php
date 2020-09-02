@@ -28,7 +28,7 @@
                 <div class="card-header">
                     <div class="row">
                     <div class="col-sm"><a href="/products/create" class="btn btn-info">Register a Product</a></div>
-                    <div class="col-sm"></div>
+                    <div class="col-sm"><a href="/order" class="btn btn-info">Show Orders</a></div>
                     <div class="col-sm"><a href="/brands/create" class="btn btn-info">Register a Brand</a></div>
                     </div>
                 </div>

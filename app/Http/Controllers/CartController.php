@@ -3,35 +3,106 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Cart;
 use Session;
+use App\Order;
 
 class CartController extends Controller
 {
-	public function index()
-	{
-		$oldCart = Session::has('cart') ? Session::get('cart') : null;
-		if($oldCart != null) return 'You dont have anything in your cart, dummy!';
-		$newCart = new Cart($oldCart);
-		dd($newCart);
-	}
-    public function addProductToCart(Product $product, $number)
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
     {
-    	$number = intval($number);
-    	$newCart = new Cart(Session::has('cart') ? Session::get('cart') : null);
-        $newCart->add($product, $number);
-        Session::put('cart', $cart);
-        // dd($cart);
-        return $newCart;
+        $item = session('cart');
+        // session::flush();
+        return view('cart.index')->with('item',$item);
     }
 
-    public function removeProductFromCart(Product $product)
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create(Request $request)
     {
-        $oldCart = Session::has('cart') ? Session::get('cart') : null;
-        if($oldCart === null) return;
-        $newCart = new Cart($oldCart);
-        $newCart->remove($product);
-        Session::put('cart', $newCart);
-        return $newCart;
+        $this->validate($request, [
+            'user_name' => 'required',
+            'phoneNumber' => 'required',
+            'email' => 'required'
+        ]);
+
+        $order = new Order();
+
+        $order->user_name = $request->user_name;
+        $order->email = $request->email;
+        $order->phoneNumber = $request->phoneNumber;
+        $order->items = session('cart');
+        $order->save();
+        return session('cart');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        // $request->session()->put('cart', $name);
+        session::push('cart.'.$request->name, $request->qty);
+        // session::push('cart.qty', $request->qty);
+        $name = session('cart');
+        return redirect('/products')->with('success', 'Item Added to cart');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Request $request)
+    {
+        $item = $request->key;
+        session()->forget('cart.'.$item);
+        $item = session('cart');
+        return redirect('/cart')->with('item',$item);
     }
 }

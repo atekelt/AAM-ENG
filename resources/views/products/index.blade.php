@@ -1,3 +1,4 @@
+
 @extends('layouts.master')
 
 @section('content')
@@ -53,312 +54,44 @@
                     </ul>
                   </div><!-- .showing-result showing-Short end -->
                 </div>
+                
             </div>
-            <div class="row product-list">
-                <div class="col-lg-3 col-md-6">
-                  <div class="single-details">
-                    <div class="images"> <a href="#"><img src="images/shop/1.jpg" alt=""></a>
-                      <div class="overley">
-                        <div class="winners-details">
-                          <ul class="product-info">
-                            <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-compress" aria-hidden="true"></i></a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="triangle_left"></div>
-                    <h4><a href="#">Product Title Here</a></h4>
-                    <div class="price-details">
-                      <ul>
-                        <li> Form $120 </li>
-                        <li> <a href="#" class="add-to-cart">Add To Cart</a> </li>
-                      </ul>
-                    </div>
-                  </div><!-- .single-details end -->
-                </div>
-                
-                <div class="col-lg-3 col-md-6">
-                  <div class="single-details">
-                    <div class="images"> <a href="#"><img src="images/shop/2.jpg" alt=""></a>
-                      <div class="overley">
-                        <div class="winners-details">
-                          <ul class="product-info">
-                            <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-compress" aria-hidden="true"></i></a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="triangle_left"></div>
-                    <h4><a href="#">Product Title Here</a></h4>
-                    <div class="price-details">
-                      <ul>
-                        <li> Form $120 </li>
-                        <li> <a href="#" class="add-to-cart">Add To Cart</a> </li>
-                      </ul>
-                    </div>
-                  </div><!-- .single-details end -->
-                </div>
-                
-                <div class="col-lg-3 col-md-6">
-                  <div class="single-details">
-                    <div class="images"> <a href="#"><img src="images/shop/3.jpg" alt=""></a>
-                      <div class="overley">
-                        <div class="winners-details">
-                          <ul class="product-info">
-                            <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-compress" aria-hidden="true"></i></a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="triangle_left"></div>
-                    <h4><a href="#">Product Title Here</a></h4>
-                    <div class="price-details">
-                      <ul>
-                        <li> Form $120 </li>
-                        <li> <a href="#" class="add-to-cart">Add To Cart</a> </li>
-                      </ul>
-                    </div>
-                  </div><!-- .single-details end -->
-                </div>
-                
-                <div class="col-lg-3 col-md-6">
-                  <div class="single-details">
-                    <div class="images"> <a href="#"><img src="images/shop/4.jpg" alt=""></a>
-                      <div class="overley">
-                        <div class="winners-details">
-                          <ul class="product-info">
-                            <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-compress" aria-hidden="true"></i></a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="triangle_left"></div>
-                    <h4><a href="#">Product Title Here</a></h4>
-                    <div class="price-details">
-                      <ul>
-                        <li> Form $120 </li>
-                        <li> <a href="#" class="add-to-cart">Add To Cart</a> </li>
-                      </ul>
-                    </div>
-                  </div><!-- .single-details end -->
-                </div>
-                
-                <div class="col-lg-3 col-md-6">
-                  <div class="single-details">
-                    <div class="images"> <a href="#"><img src="images/shop/5.jpg" alt=""></a>
-                      <div class="overley">
-                        <div class="winners-details">
-                          <ul class="product-info">
-                            <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-compress" aria-hidden="true"></i></a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="triangle_left"></div>
-                    <h4><a href="#">Product Title Here</a></h4>
-                    <div class="price-details">
-                      <ul>
-                        <li> Form $120 </li>
-                        <li> <a href="#" class="add-to-cart">Add To Cart</a> </li>
-                      </ul>
-                    </div>
-                  </div><!-- .single-details end -->
-                </div>
-                
-                <div class="col-lg-3 col-md-6">
-                  <div class="single-details">
-                    <div class="images"> <a href="#"><img src="images/shop/6.jpg" alt=""></a>
-                      <div class="overley">
-                        <div class="winners-details">
-                          <ul class="product-info">
-                            <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-compress" aria-hidden="true"></i></a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="triangle_left"></div>
-                    <h4><a href="#">Product Title Here</a></h4>
-                    <div class="price-details">
-                      <ul>
-                        <li> Form $120 </li>
-                        <li> <a href="#" class="add-to-cart">Add To Cart</a> </li>
-                      </ul>
-                    </div>
-                  </div><!-- .single-details end -->
-                </div>
-                
-                <div class="col-lg-3 col-md-6">
-                  <div class="single-details">
-                    <div class="images"> <a href="#"><img src="images/shop/7.jpg" alt=""></a>
-                      <div class="overley">
-                        <div class="winners-details">
-                          <ul class="product-info">
-                            <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-compress" aria-hidden="true"></i></a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="triangle_left"></div>
-                    <h4><a href="#">Product Title Here</a></h4>
-                    <div class="price-details">
-                      <ul>
-                        <li> Form $120 </li>
-                        <li> <a href="#" class="add-to-cart">Add To Cart</a> </li>
-                      </ul>
-                    </div>
-                  </div><!-- .single-details end -->
-                </div>
-                
-                <div class="col-lg-3 col-md-6">
-                  <div class="single-details">
-                    <div class="images"> <a href="#"><img src="images/shop/8.jpg" alt=""></a>
-                      <div class="overley">
-                        <div class="winners-details">
-                          <ul class="product-info">
-                            <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-compress" aria-hidden="true"></i></a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="triangle_left"></div>
-                    <h4><a href="#">Product Title Here</a></h4>
-                    <div class="price-details">
-                      <ul>
-                        <li> Form $120 </li>
-                        <li> <a href="#" class="add-to-cart">Add To Cart</a> </li>
-                      </ul>
-                    </div>
-                  </div><!-- .single-details end -->
-                </div>
-                
-                <div class="col-lg-3 col-md-6">
-                  <div class="single-details">
-                    <div class="images"> <a href="#"><img src="images/shop/9.jpg" alt=""></a>
-                      <div class="overley">
-                        <div class="winners-details">
-                          <ul class="product-info">
-                            <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-compress" aria-hidden="true"></i></a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="triangle_left"></div>
-                    <h4><a href="#">Product Title Here</a></h4>
-                    <div class="price-details">
-                      <ul>
-                        <li> Form $120 </li>
-                        <li> <a href="#" class="add-to-cart">Add To Cart</a> </li>
-                      </ul>
-                    </div>
-                  </div><!-- .single-details end -->
-                </div>
-                
-                <div class="col-lg-3 col-md-6">
-                  <div class="single-details">
-                    <div class="images"> <a href="#"><img src="images/shop/10.jpg" alt=""></a>
-                      <div class="overley">
-                        <div class="winners-details">
-                          <ul class="product-info">
-                            <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-compress" aria-hidden="true"></i></a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="triangle_left"></div>
-                    <h4><a href="#">Product Title Here</a></h4>
-                    <div class="price-details">
-                      <ul>
-                        <li> Form $120 </li>
-                        <li> <a href="#" class="add-to-cart">Add To Cart</a> </li>
-                      </ul>
-                    </div>
-                  </div><!-- .single-details end -->
-                </div>
-                
-                <div class="col-lg-3 col-md-6">
-                  <div class="single-details">
-                    <div class="images"> <a href="#"><img src="images/shop/11.jpg" alt=""></a>
-                      <div class="overley">
-                        <div class="winners-details">
-                          <ul class="product-info">
-                            <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-compress" aria-hidden="true"></i></a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="triangle_left"></div>
-                    <h4><a href="#">Product Title Here</a></h4>
-                    <div class="price-details">
-                      <ul>
-                        <li> Form $120 </li>
-                        <li> <a href="#" class="add-to-cart">Add To Cart</a> </li>
-                      </ul>
-                    </div>
-                  </div><!-- .single-details end -->
-                </div>
-                
-                <div class="col-lg-3 col-md-6">
-                  <div class="single-details">
-                    <div class="images"> <a href="#"><img src="images/shop/12.jpg" alt=""></a>
-                      <div class="overley">
-                        <div class="winners-details">
-                          <ul class="product-info">
-                            <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-compress" aria-hidden="true"></i></a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="triangle_left"></div>
-                    <h4><a href="#">Product Title Here</a></h4>
-                    <div class="price-details">
-                      <ul>
-                        <li> Form $120 </li>
-                        <li> <a href="#" class="add-to-cart">Add To Cart</a> </li>
-                      </ul>
-                    </div>
-                  </div><!-- .single-details end -->
-                </div>
-            </div>
+            <div class="alert alert-dark" role="alert">@include('inc.messages')</div>
             <div class="row">
-                <div class="col-sm-12 col-xs-12 text-center">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item disabled"><a class="page-link fa fa-angle-left" href="#" tabindex="-1"></a></li>
-                            <li class="page-item"><a class="page-link active" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link dotted" href="#">...</a></li>
-                            <li class="page-item"><a class="page-link" href="#">5</a></li>
-                            <li class="page-item"><a class="page-link" href="#">6</a></li>
-                            <li class="page-item"><a class="page-link fa fa-angle-right" href="#"></a></li>
-                        </ul>
-                    </nav><!-- .navigation end -->
+              @if(count($products) > 0)
+                @foreach ($products as $product)
+                  <div class="col-lg-4 col-md-6">
+                          <div class="cource-item">
+                              <div class="cource-img">
+                                  <a href="{{ $product->path()}}"><img src="storage\images\{{$product->image}}" alt="" /></a>
+                                      <a class="image-link" href="{{ $product->path()}}" title="{{ $product->brand->name}}">
+                                          <i class="fa fa-link"></i>
+                                      </a>
+                              </div>
+                              <div class="course-body">
+                                <a href="{{ $product->path()}}" class="course-category">{{$product->name}}</a>
+                                <h4 class="course-title"><a href="{{ $product->path()}}">{{ $product->title }}</a></h4>
+                                <div class="course-desc">
+                                  <p>
+                                    {{ $product->description }}
+                                  </p>
+                                </div>
+                                <div class="form-group">
+                                  {!! Form::open(['action' => 'CartController@store', 'method' => 'POST']) !!}
+                                <input type="hidden" name="name" value="{{$product->name}}">
+                                {{Form::submit('Add To Cart',['class'=>'btn btn-primary'])}}
+                                <input type="number" name="qty" value="1"><br>
+                                  
+                              </div>
+                                  {!! Form::close() !!}
+                              </div>
+                          </div>						
                 </div>
-            </div>
-          </div>
+                @endforeach
+              @else
+                <h1> No products in our stock. Please stay tuned for new products!</h1>
+              @endif
+              </div>
         </div>
         <!-- Shop Page End Here --> 
 
