@@ -79,6 +79,7 @@
                                 <div class="form-group">
                                   {!! Form::open(['action' => 'CartController@store', 'method' => 'POST']) !!}
                                 <input type="hidden" name="name" value="{{$product->name}}">
+                                <input type="hidden" name="id" value="{{$product->id}}">
                                 {{Form::submit('Add To Cart',['class'=>'btn btn-primary'])}}
                                 <input type="number" name="qty" value="1"><br>
                                   

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Session;
 use App\Order;
+use App\OrderItem;
 
 class CartController extends Controller
 {
@@ -35,11 +36,23 @@ class CartController extends Controller
 
         $order = new Order();
 
+        $items = session('cart');
+
+
         $order->user_name = $request->user_name;
         $order->email = $request->email;
         $order->phoneNumber = $request->phoneNumber;
-        $order->items = session('cart');
+        $order->status = "pending";
+        // $order->items = session('cart');
         $order->save();
+        foreach ($items as $item) {
+            $order_item = new OrderItem();
+            $order_item->order_id = $order->id;
+            $order_item->product_id =$item['id'];
+            $order_item->quantity =$item['qty'];
+            $order_item->save();
+        }
+
         session::flush();
         $item = session('cart');
         return redirect('/cart')->with('item',$item)->with('success','Order Placed');
@@ -54,7 +67,9 @@ class CartController extends Controller
     public function store(Request $request)
     {
         // $request->session()->put('cart', $name);
-        session::push('cart.'.$request->name, $request->qty);
+        $cart_details = ['qty'=> $request->qty , 'id'=> $request->id];
+        session::put('cart.'.$request->name,$cart_details);
+       // session::push('cart.'.$request->name, $request->id);
         // session::push('cart.qty', $request->qty);
         $name = session('cart');
         return redirect('/products')->with('success', 'Item Added to cart');
