@@ -92,10 +92,5 @@
 @endsection
 
 @section('footer')
-
+	@include('partials.footer')
 @endsection
-
-{{-- @php
-    var_dump($item);
-    // var_dump($qty);
-@endphp --}}

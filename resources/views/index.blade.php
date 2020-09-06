@@ -8,6 +8,8 @@
         <!-- include the full width header block -->
         @include('partials.toolbar')
 
+        @include('partials.sticky-menu')
+
         <!-- Include the slider partials -->
         @include('partials.slider')
 

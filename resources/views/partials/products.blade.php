@@ -10,8 +10,10 @@
                 	</div>
                 </div>
 				<div class="row">
+					<?php $count = 0; ?>
 					@if(count($products) > 0)
 						@foreach ($products as $product)
+						<?php if($count == 3) break; ?>
 							<div class="col-lg-4 col-md-6">
 			                <div class="cource-item">
 			                    <div class="cource-img">
@@ -32,6 +34,7 @@
 			                    </div>
 			                </div>						
 						</div>
+						<?php $count++; ?>
 						@endforeach
 					@else
 						<h1> No products in our stock. Please stay tuned for new products!</h1>

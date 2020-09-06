@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use App\Orderitem;
+use App\Product;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -20,8 +22,9 @@ class OrderController extends Controller
         }
         else
         {
-            $orders = Order::orderBy('created_at','desc')->get();
-        return view ('admin.order')-> with('orders', $orders);
+            $orders = Order::orderBy('created_at','desc')->where('status','pending')->get();
+            $orderd_items = Orderitem::all();
+        return view ('admin.order')-> with('orders', $orders)->with('orderd_items', $orderd_items);
         }
     }
 
@@ -52,9 +55,20 @@ class OrderController extends Controller
      * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function show(Order $order)
+    public function show(Request $request)
     {
-        //
+        // $orderd_items = Orderitem::where('order_id' , '=', $request->order_id)->first();
+        $items = Orderitem::select('id')->where('order_id', $request->order_id)->get();
+        $ordered_items = Orderitem::find($items);
+        foreach($ordered_items as $items)
+        {
+            $product[] = Product::select('name')->where('id',$items->product_id)->get();
+        }
+        return view('admin.detail')-> with('ordered_items' , $ordered_items)->with('product', $product)
+                                   -> with('order_id', $request->order_id)
+                                   -> with('user_name', $request->user_name)
+                                   -> with('email', $request->email)
+                                   -> with('phoneNumber', $request->phoneNumber);
     }
 
     /**
@@ -75,9 +89,12 @@ class OrderController extends Controller
      * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Order $order)
+    public function update(Request $request)
     {
-        //
+        $order = Order::find($request->order_id);
+        $order->status = 'complete';
+        $order->save();
+        return redirect('/order')->with('success', 'Order Canceled');
     }
 
     /**
@@ -88,8 +105,9 @@ class OrderController extends Controller
      */
     public function destroy(Request $request)
     {
-        $order = Order::find($request->id);
-        $order->delete();
-        return redirect('/order')->with('success', 'Order Confirmed');
+        $order = Order::find($request->order_id);
+        $order->status = 'canceled';
+        $order->save();
+        return redirect('/order')->with('success', 'Order Canceled');
     }
 }

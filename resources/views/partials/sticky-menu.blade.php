@@ -1,4 +1,4 @@
-<div class="menu-area menu-sticky see-through sticky">
+<div class="menu-area menu-sticky sticky">
 					<div class="container">
 						<div class="row rs-vertical-middle">
 							<div class="col-lg-3 col-md-12">

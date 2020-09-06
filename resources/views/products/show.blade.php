@@ -2,8 +2,10 @@
 
 @section('content')
     
-    <!-- Include the header -->
-    @include('partials.fullwidth-header')
+   <!-- Include the header -->
+  @include('partials.fullwidth-header')
+  <!-- Include the calltoaction partials -->
+  @include('partials.calltoaction') 
 
 <!-- Shop Single Page Start Here -->
         <div class="shop-page-area shop-single-page-area single-product-page single-blog-page-area">
@@ -39,23 +41,22 @@
                       </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12">
-                      <h4>Product Title Here</h4>
-                      <p>Using the Composite Products extension (sold separately), you can create “build-your-own bundles” with various scenarios and options, like this advanced DSLR camera kit.</p>
-                      <p>See the guide for setting up a similar product and more in the documentation Use Cases.</p>
-                      <p>Note that the items, pictures, and descriptions are purely for demonstration purposes and do not imply any partnership, preference, or connection with Canon, Nikon, Lowepro, or any other brand.</p>
-                      <p class="cat"><strong>Category:</strong> Lunch</p>
-                      <p class="tag"><strong>Tags:</strong> Composite Product, Extension Demonstration</p>
+                    <h4>{{$page}}</h4>
+                    <p>{{$description}}</p>
+                      <p class="cat"><strong>Inventory:</strong> {{$count}}</p>
+                    <p class="tag"><strong>Price:</strong> {{$price}} Birr</p>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="col-lg-3 col-md-12"> 
                 <div class="sidebar-area">
-                    <div class="search-box">
-                        <div class="box-search">
-                            <a href="#" class="add-to-cart">Add To Cart</a>
-                        </div>
-                    </div>
+                    {!! Form::open(['action' => 'CartController@store', 'method' => 'POST', 'class'=>'form-group']) !!}
+                    <input type="hidden" name="name" value="{{$page}}">
+                    <input type="hidden" name="id" value="{{$id}}">
+                    {{Form::submit('Add To Cart',['class'=>'btn btn-primary form-control'])}}
+                    <input type="number" name="qty" value="1" class="form-control">
+                    {!! Form::close() !!}
                 </div>
               </div>
             </div>
@@ -168,4 +169,7 @@
         
         @include('partials.partners')
 
+@endsection
+@section('footer')
+	@include('partials.footer')
 @endsection

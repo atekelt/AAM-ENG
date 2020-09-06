@@ -49,18 +49,15 @@
                                 <small>Registered on {{$order->created_at}}</small>
                                 <br>
                             </div>
-                            <div class="col">
-                                @php
-                                    var_dump($order->items);
-                                @endphp
-                            
-                            </div>
                             
                             <div class="col">
                                 <div class="form-group">
-                                    {!! Form::open(['action' => 'OrderController@destroy', 'method' => 'POST']) !!}
-                                  <input type="hidden" name="id" value="{{$order->id}}">
-                                  {{Form::submit('Confirm',['class'=>'btn btn-danger'])}}
+                                    {!! Form::open(['action' => 'OrderController@show', 'method' => 'POST']) !!}
+                                  <input type="hidden" name="order_id" value="{{$order->id}}">
+                                <input type="hidden" name="user_name" value="{{$order->user_name}}">
+                                <input type="hidden" name="email" value="{{$order->email}}">
+                                <input type="hidden" name="phoneNumber" value="{{$order->phoneNumber}}">
+                                  {{Form::submit('Details',['class'=>'btn btn-info'])}}
                                 </div>
                                     {!! Form::close() !!}</td>
                             </div>

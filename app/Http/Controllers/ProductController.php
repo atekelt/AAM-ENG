@@ -100,8 +100,13 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        $page = "Product - ".$product->name; 
-        return view('products.show', compact('page'));
+        $page = $product->name; 
+        return view('products.show', compact('page'))
+                            ->with('description',$product->description)
+                            ->with('count',$product->count)
+                            -> with('price',$product->price)
+                            ->with('id', $product->is)
+                            ->with('image', $product->image);
     }
 
     /**

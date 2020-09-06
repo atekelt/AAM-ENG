@@ -4,7 +4,9 @@
 @section('content')
 	
 	<!-- Include the header -->
-	@include('partials.fullwidth-header')
+  @include('partials.fullwidth-header')
+   <!-- Include the calltoaction partials -->
+   @include('partials.calltoaction') 
 
 	<div class="shop-page-area sec-spacer">
           <div class="container">
@@ -58,6 +60,7 @@
             </div>
             <div class="alert alert-dark" role="alert">@include('inc.messages')</div>
             <div class="row">
+              <a href="">
               @if(count($products) > 0)
                 @foreach ($products as $product)
                   <div class="col-lg-4 col-md-6">
@@ -69,31 +72,22 @@
                                       </a>
                               </div>
                               <div class="course-body">
-                                <a href="{{ $product->path()}}" class="course-category">{{$product->name}}</a>
+                                <a href="{{ $product->path()}}" class="course-category">Product</a>
                                 <h4 class="course-title"><a href="{{ $product->path()}}">{{ $product->title }}</a></h4>
                                 <div class="course-desc">
                                   <p>
                                     {{ $product->description }}
                                   </p>
                                 </div>
-                                <div class="form-group">
-                                  {!! Form::open(['action' => 'CartController@store', 'method' => 'POST']) !!}
-                                <input type="hidden" name="name" value="{{$product->name}}">
-                                <input type="hidden" name="id" value="{{$product->id}}">
-                                {{Form::submit('Add To Cart',['class'=>'btn btn-primary'])}}
-                                <input type="number" name="qty" value="1"><br>
-                                  
-                              </div>
-                                  {!! Form::close() !!}
+                                <button class="cource-btn"><a href="{{ $product->path()}}">View Product</a></button>
                               </div>
                           </div>						
                 </div>
                 @endforeach
+              </a>
               @else
                 <h1> No products in our stock. Please stay tuned for new products!</h1>
               @endif
-              </div>
-        </div>
         <!-- Shop Page End Here --> 
 
         @include('partials.partners')
