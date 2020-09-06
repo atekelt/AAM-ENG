@@ -65,7 +65,6 @@ Route::get('/login', 'SessionController@index')->name('login');
 Route::post('/login', 'SessionController@store')->name('login-action');
 Route::post('/logout', 'SessionController@destroy')->name('logout');
 
-Route::get('/admin', 'AdminController@index');
 Route::get('/admin/{id}/edit', 'AdminController@edit');
 Route::put('/admin/update/{id}', 'AdminController@update');
 Route::delete('/admin/{id}', 'AdminController@destroy');

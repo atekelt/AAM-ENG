@@ -98,8 +98,25 @@ class AdminController extends Controller
         {
         $this->validate($request, [
             'name' => 'required',
-            'price' => 'required'
+            'price' => 'required',
+            'cover_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
+
+
+        if($request->hasFile('cover_image')){
+            $fileNameWithExt = $request->file('cover_image')->getClientOriginalName();
+            $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
+
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            $path = $request->file('cover_image')->storeAs('images', $fileNameToStore);
+        }
+
+        else{
+            $fileNameToStore = 'noimage.jpg';
+        }
+
+
         $product = Product::find($id);
         $product->name = $request->input('name');
         $product->product_number = $request->input('product_number');
@@ -107,11 +124,12 @@ class AdminController extends Controller
         $product->description = $request->input('description');
         $product->price = $request->input('price');
         $product->brand_id = $request->input('brand_id');
-        $product->image = $request->input('image');
 
+        
+        $product->image = $fileNameToStore;
         $product->save();
 
-        return redirect('/admin/'.$id.'/edit')->with('success', 'Product Item Updated');
+        return redirect('/home')->with('success', 'Product Item Updated');   
         }
     }
 
@@ -131,7 +149,7 @@ class AdminController extends Controller
         {
         $product = Product::find($id);
         $product->delete();
-        return redirect('/admin')->with('success', 'Product Item Deleted');
+        return redirect('/home')->with('success', 'Product Item Deleted');
         }
     }
 }

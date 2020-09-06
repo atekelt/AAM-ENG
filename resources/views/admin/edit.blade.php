@@ -1,9 +1,11 @@
-@extends('layouts.master')
+@extends('layouts.app')
 @section('content')
-@include('partials.permanent-menu')
 
 <div class="container">
     <div class="row justify-content-center" style="padding-top: 10rem;" >
+        <div>
+            <a href="/home"><button class="btn btn-secondary">Go Back</button></a>
+        </div>
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
@@ -11,7 +13,7 @@
                     @include('inc.messages')
                 </div>
                 <div class="card-body">
-                    {!! Form::open(['action' => 'ProductController@store', 'method' => 'POST', 'files' => 'true']) !!}
+                    {!! Form::open(['action' => ['AdminController@update', $product->id ], 'method' => 'POST', 'files' => 'true']) !!}
                 <br>
                 <div class="form-group">
                 {{Form::label('name','Product Name')}}
@@ -41,6 +43,7 @@
                 {{Form::label('cover_image','Product Image')}}
                 {{ Form::file('cover_image',['class'=> 'form-control'])}}
                 </div>    
+                {{Form::hidden('_method','PUT')}}
                 <div class="form-group">
                 {{Form::submit('submit',['class'=>'btn btn-primary'])}}
                 </div>
@@ -52,10 +55,6 @@
         </div>
     </div>
 </div>
-
-@endsection
-
-@section('footer')
 
 @endsection
 

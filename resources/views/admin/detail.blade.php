@@ -1,36 +1,43 @@
 @extends('layouts.app')
 
 @section('content')
-<table class="table">
-    <tr>
-        <td>
-            <table class="table">
-                <tr>
-                    <td>Name</td>
-                </tr>
-                @foreach ($product as $product)
-                @foreach ($product as $product)
-                <tr>
-                    <td>{{$product->name}}</td>
-                </tr>
-                @endforeach
-                @endforeach
-            </table>
-        </td>
-        <td>
-            <table class="table">
-                <tr>
-                    <td>Qty</td>
-                    @foreach ($ordered_items as $order)
+
+<div class="container">
+    <div>
+        <a href="/order"><button class="btn btn-secondary">Go Back</button></a>
+    </div>
+    <table class="table">
+        <tr>
+            <td>
+                <table class="table">
                     <tr>
-                        <td>{{$order->quantity}}</td>
+                        <td>Name</td>
+                    </tr>
+                    @foreach ($product as $product)
+                    @foreach ($product as $product)
+                    <tr>
+                        <td>{{$product->name}}</td>
                     </tr>
                     @endforeach
-                </tr>
-            </table>
-        </td>
-    </tr>
-</table>
+                    @endforeach
+                </table>
+            </td>
+            <td>
+                <table class="table">
+                    <tr>
+                        <td>Qty</td>
+                        @foreach ($ordered_items as $order)
+                        <tr>
+                            <td>{{$order->quantity}}</td>
+                        </tr>
+                        @endforeach
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    
+</div>
 
 <div class="card">
   <div class="card-body">

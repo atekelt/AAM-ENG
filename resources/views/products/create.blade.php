@@ -1,11 +1,10 @@
-@extends('layouts.master')
-@section('content')
-@include('partials.permanent-menu')
+@extends('layouts.app')
 
+@section('content')
 <div class="container">
     <div class="row justify-content-center" style="padding-top: 10rem;" >
         <div>
-            <a href="/admin"><button class="btn btn-basic">Go Back</button></a>
+            <a href="/home"><button class="btn btn-secondary">Go Back</button></a>
         </div>
         <div class="col-md-8">
             <div class="card">
@@ -56,8 +55,4 @@
         </div>
     </div>
 </div>
-@endsection
-
-@section('footer')
-
 @endsection

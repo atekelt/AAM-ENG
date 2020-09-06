@@ -25,22 +25,13 @@
 											<!--End Icons -->
                                             
 											<!--Brand Menu Start-->
-		                                    <li class="menu-item-has-children"> <a href="http://localhost:8000/brands">Brands</a>
-		                                      <ul class="sub-menu">
-		                                        <li><a href="courses.html">Video trainings</a></li>
-		                                        <li class="menu-item-has-children"> <a href="#">Product documents</a>
-                                                  <ul class="sub-menu">
-	                                                  <li><a href="#">Product A</a></li>
-	                                                  <li><a href="#">Product B</a></li>
-                                                  <div class="sub-menu-close"><i class="fa fa-times" aria-hidden="true"></i>Close</div></ul>
-		                                        <span class="rs-menu-parent"><i class="fa fa-angle-down" aria-hidden="true"></i></span></li>
-		                                      <div class="sub-menu-close"><i class="fa fa-times" aria-hidden="true"></i>Close</div></ul>
-		                                    <span class="rs-menu-parent"><i class="fa fa-angle-down" aria-hidden="true"></i></span></li>
+		                                    <li class="menu-item-has-children"> <a href="http://localhost:8000/brands">Brands</a></li>
 		                                    <!--Brand Menu End-->
                                             
 											<!--Contact Menu Start-->
 											<li> <a href="http://localhost:8000/contact">Contact</a></li>
 								            <!--Contact Menu End-->
+												
 										</ul>
 									</nav>
 								</div>
