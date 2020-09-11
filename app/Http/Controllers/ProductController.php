@@ -104,7 +104,7 @@ class ProductController extends Controller
         return view('products.show', compact('page'))
                             ->with('description',$product->description)
                             ->with('count',$product->count)
-                            -> with('price',$product->price)
+                            ->with('price',$product->price)
                             ->with('id', $product->is)
                             ->with('image', $product->image);
     }

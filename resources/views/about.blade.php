@@ -18,9 +18,9 @@
         </div>
     </div>
 </div>
-
+@include('partials.partners')
 @endsection
 
 @section('footer')
-
+@include('partials.footer')
 @endsection

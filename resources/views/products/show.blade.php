@@ -43,7 +43,6 @@
                     <div class="col-lg-6 col-md-6 col-sm-12">
                     <h4>{{$page}}</h4>
                     <p>{{$description}}</p>
-                      <p class="cat"><strong>Inventory:</strong> {{$count}}</p>
                     <p class="tag"><strong>Price:</strong> {{$price}} Birr</p>
                     </div>
                   </div>
